@@ -8,7 +8,6 @@ if (!requireNamespace("BiocManager", quietly = TRUE))
 BiocManager::install("org.Hs.eg.db")
 
 library(Biobase)
-library("AnnotationDbi")
 library("org.Hs.eg.db")
 
 
@@ -36,7 +35,6 @@ if (!requireNamespace("BiocManager", quietly = TRUE))
 BiocManager::install("org.Hs.eg.db")
 
 library(Biobase)
-library("AnnotationDbi")
 library("org.Hs.eg.db")
 
 
