@@ -1,30 +1,26 @@
 
-if (!requireNamespace("BiocManager", quietly = TRUE))
-  install.packages("BiocManager")
-BiocManager::install("org.Hs.eg.db")
+# Converting list of Probes to genes and vice versa
 
-
-# Convert you eset object to a matrix with the exprs() function
+library("AnnotationDbi")
+library("org.Hs.eg.db")
 library(Biobase)
+
+# Inserting a candidate list of genes or probes to be converted
+gset <- read.table( file.choose(), sep="\t", header=TRUE)  
 M1 <- gset
 
 # Convert the row names to entrez ids
-library("AnnotationDbi")
-library("org.Hs.eg.db")
+
 columns(org.Hs.eg.db)
 
 geneSymbols <- mapIds(org.Hs.eg.db, keys=M1, column="SYMBOL", keytype="ENSEMBL", multiVals="first")
 head(geneSymbols)
 
 geneSymbols <- as.matrix(geneSymbols)
-dim(geneSymbols)
-
 geneSymbols1 <- as.matrix(geneSymbols[ !is.na(geneSymbols) ])
-dim(geneSymbols1)
 nodupl <- geneSymbols1[ !duplicated(geneSymbols1[,1]), ]
 
-dim(as.matrix(nodupl))
-write.csv(nodupl, "GRCh38_3_0_0_filtered_Ensemble93.csv")
+write.table(nodupl, "GRCh38_3_0_0_filtered_Ensemble93.txt")
 
 
 
