@@ -1,5 +1,7 @@
 
-# Converting a list of probes to a list of genes 
+####################################################
+## Converting a list of probes to a list of genes ##
+####################################################
 
 if (!requireNamespace("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
@@ -25,9 +27,9 @@ write.table(nodupl, "List_of_genes_from_probe_list.txt")
 
 
 
-###################################################
-
-# Converting a list of genes to a list of probes
+####################################################
+## Converting a list of genes to a list of probes ##
+####################################################
 
 if (!requireNamespace("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
