@@ -51,5 +51,3 @@ nodupl <- geneSymbols1[ !duplicated(geneSymbols1[,1]), ]
 write.table(nodupl, "List_of_probes_from_gene_list.txt")
 
 
-
-
