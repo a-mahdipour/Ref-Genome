@@ -18,3 +18,5 @@ Gen_ref_nodupl <- Gen_ref[ which(!duplicated(Gen_ref[,2])), ]
 
 write.table(Gen_ref_nodupl, "10XGenomics_Grch38_Ensemble93_3_0_0_our_analysis.txt")
 write.table(Gen_ref_nodupl, "Ref_mouse_genes_mm10_our_analysis.txt")
+
+
